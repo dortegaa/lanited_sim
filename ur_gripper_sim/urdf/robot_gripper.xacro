@@ -4,10 +4,10 @@
    
 
     <xacro:include filename="$(find ur_e_description)/urdf/ur3e_robot.urdf.xacro" />    
-    <xacro:include filename="$(find my_gripper_description)/urdf/gripper.urdf" />
+    <xacro:include filename="$(find onrobot_description)/urdf/gripper.urdf" />
 
     <joint name="gipper_tool_joint" type="fixed">
-        <parent link="ee_link" />
+        <parent link="tool0" />
         <child link = "base_gripper" />
         <origin xyz="0.0 0.0 0.0" rpy="1.570 0.0 0.0" />
       </joint>
