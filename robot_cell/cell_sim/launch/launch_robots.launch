@@ -5,7 +5,7 @@
   
     <group ns="robot1">
         
-        <param name="robot_description" command="$(find xacro)/xacro '$(find ur_gripper_sim)/urdf/robot_gripper.xacro'" />
+        <param name="robot_description" command="$(find xacro)/xacro '$(find ur_gripper_sim)/urdf/ur3_onrobot_gripper.xacro'" />
         <param name="tf_prefix" value="robot1_tf" />
 
         <include file="$(find cell_sim)/launch/spawn_model.launch">
@@ -25,14 +25,14 @@
             <param name="publish_frequency" type="double" value="50.0" />
         </node>
 
-        <include file="$(find ur_gripper_sim)/launch/launch_controller_w_gripper.launch"/>
+        <include file="$(find ur_gripper_sim)/launch/launch_controller_ur3_onrobot.launch"/>
         <node name = "rqt_joint_trajectory_controller" pkg = "rqt_joint_trajectory_controller" type = "rqt_joint_trajectory_controller" />
         <node name = "rqt_publisher" pkg = "rqt_publisher" type = "rqt_publisher"/>
 
     </group>
       <group ns="robot2">
         
-        <param name="robot_description" command="$(find xacro)/xacro '$(find ur_gripper_sim)/urdf/robot_gripper.xacro'" />
+        <param name="robot_description" command="$(find xacro)/xacro '$(find ur_gripper_sim)/urdf/ur3_onrobot_gripper.xacro'" />
         <param name="tf_prefix" value="robot2_tf" />
 
          <include file="$(find cell_sim)/launch/spawn_model.launch">
@@ -52,7 +52,7 @@
             <param name="publish_frequency" type="double" value="50.0" />
         </node>
 
-        <include file="$(find ur_gripper_sim)/launch/launch_controller_w_gripper.launch"/>
+        <include file="$(find ur_gripper_sim)/launch/launch_controller_ur3_onrobot.launch"/>
         <node name = "rqt_joint_trajectory_controller" pkg = "rqt_joint_trajectory_controller" type = "rqt_joint_trajectory_controller" />
         <node name = "rqt_publisher" pkg = "rqt_publisher" type = "rqt_publisher"/>
 
@@ -60,7 +60,7 @@
 
      <group ns="robot3">
         
-        <param name="robot_description" command="$(find xacro)/xacro '$(find ur_e_description)/urdf/ur5e_robot.urdf.xacro'" />
+        <param name="robot_description" command="$(find xacro)/xacro '$(find ur_gripper_sim)/urdf/ur5_robotiq_gripper.xacro'" />
         <param name="tf_prefix" value="robot3_tf" />
 
         <include file="$(find cell_sim)/launch/spawn_model.launch">

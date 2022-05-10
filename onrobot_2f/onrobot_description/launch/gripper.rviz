@@ -64,17 +64,95 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_gripper:
+        base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        finger_1:
+        ee_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        finger_2:
+        forearm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_finger1_finger_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_finger1_finger_tip_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_finger1_inner_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_finger1_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_finger2_finger_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_finger2_finger_tip_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_finger2_inner_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_finger2_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        shoulder_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        upper_arm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wrist_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wrist_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wrist_3_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -90,31 +168,83 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_gripper:
+        base:
           Value: true
-        finger_1:
+        base_link:
           Value: true
-        finger_2:
+        ee_link:
+          Value: true
+        forearm_link:
+          Value: true
+        gripper_base_link:
+          Value: true
+        gripper_finger1_finger_link:
+          Value: true
+        gripper_finger1_finger_tip_link:
+          Value: true
+        gripper_finger1_inner_knuckle_link:
+          Value: true
+        gripper_finger1_knuckle_link:
+          Value: true
+        gripper_finger2_finger_link:
+          Value: true
+        gripper_finger2_finger_tip_link:
+          Value: true
+        gripper_finger2_inner_knuckle_link:
+          Value: true
+        gripper_finger2_knuckle_link:
+          Value: true
+        shoulder_link:
+          Value: true
+        tool0:
+          Value: true
+        upper_arm_link:
+          Value: true
+        wrist_1_link:
+          Value: true
+        wrist_2_link:
+          Value: true
+        wrist_3_link:
           Value: true
       Marker Alpha: 1
       Marker Scale: 0.30000001192092896
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: true
+      Show Names: false
       Tree:
-        base_gripper:
-          finger_1:
+        base_link:
+          base:
             {}
-          finger_2:
-            {}
+          shoulder_link:
+            upper_arm_link:
+              forearm_link:
+                wrist_1_link:
+                  wrist_2_link:
+                    wrist_3_link:
+                      ee_link:
+                        gripper_base_link:
+                          gripper_finger1_inner_knuckle_link:
+                            gripper_finger1_finger_tip_link:
+                              {}
+                          gripper_finger1_knuckle_link:
+                            gripper_finger1_finger_link:
+                              {}
+                          gripper_finger2_inner_knuckle_link:
+                            gripper_finger2_finger_tip_link:
+                              {}
+                          gripper_finger2_knuckle_link:
+                            gripper_finger2_finger_link:
+                              {}
+                      tool0:
+                        {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_gripper
+    Fixed Frame: base
     Frame Rate: 30
   Name: root
   Tools:
@@ -138,7 +268,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.7605187892913818
+      Distance: 1.676716685295105
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -146,17 +276,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.009060368873178959
-        Y: 0.07882238924503326
-        Z: -0.10062337666749954
+        X: -0.4543027877807617
+        Y: -0.022809268906712532
+        Z: -0.028244217857718468
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6447969675064087
+      Pitch: 0.4397971034049988
       Target Frame: <Fixed Frame>
-      Yaw: 1.4903905391693115
+      Yaw: 4.275392532348633
     Saved: ~
 Window Geometry:
   Displays:
@@ -175,4 +305,4 @@ Window Geometry:
     collapsed: false
   Width: 1267
   X: 446
-  Y: 86
+  Y: 49
