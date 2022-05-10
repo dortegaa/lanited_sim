@@ -3,7 +3,7 @@
 <launch>
 
   
-    <include file="$(find cell_sim)/launch/launch_gazebo.launch"/>
+    <!--include file="$(find cell_sim)/launch/launch_gazebo.launch"/-->
 
   
 
@@ -29,14 +29,14 @@
 
         <include file="$(find cell_sim)/launch/spawn_model.launch">
                 <arg name="robot_name" value="block"/>
-                <arg name="init_pose" value="-x 0.3 -y 0 -z 1"/>
+                <arg name="init_pose" value="-x 0.6 -y -0.2 -z 1"/>
                 
         </include>
 
   
     </group>
 
-    <include file="$(find cell_sim)/launch/launch_robots_ur5.launch"/>
+    <!--include file="$(find cell_sim)/launch/launch_robots_ur5.launch"/-->
 
 
  
