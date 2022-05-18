@@ -18,6 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   tf2_geometry_msgs
+  moveit_visual_tools
 )
 
 ## System dependencies are found with CMake's conventions
@@ -141,6 +142,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
  add_executable(pick_place_tutorial src/pick_place_tutorial.cpp)
+ add_executable(move_group_interface_tutorial src/move_group_interface_tutorial.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -151,11 +153,11 @@ include_directories(
 ## Add cmake target dependencies of the executable
 ## same as for the library above
  add_dependencies(pick_place_tutorial ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+ add_dependencies(move_group_interface_tutorial ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(pick_place_tutorial
-   ${catkin_LIBRARIES}
- )
+ target_link_libraries(pick_place_tutorial ${catkin_LIBRARIES} )
+ target_link_libraries(move_group_interface_tutorial ${catkin_LIBRARIES} )
 
 #############
 ## Install ##

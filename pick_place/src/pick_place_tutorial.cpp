@@ -95,18 +95,18 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   // Make sure that when you set the grasp_pose, you are setting it to be the pose of the last link in
   // your manipulator which in this case would be `"panda_link8"` You will have to compensate for the
   // transform from `"panda_link8"` to the palm of the end effector.
-  grasps[0].grasp_pose.header.frame_id = "wrist_3_link";
+  grasps[0].grasp_pose.header.frame_id = "gripper_base_link";
   tf2::Quaternion orientation;
   orientation.setRPY(-tau / 4, -tau / 8, -tau / 4);
   grasps[0].grasp_pose.pose.orientation = tf2::toMsg(orientation);
   grasps[0].grasp_pose.pose.position.x = 0.415;
-  grasps[0].grasp_pose.pose.position.y = 0;
-  grasps[0].grasp_pose.pose.position.z = 0.5;
+  grasps[0].grasp_pose.pose.position.y = -0.3;
+  grasps[0].grasp_pose.pose.position.z = 0.125;
 
   // Setting pre-grasp approach
   // ++++++++++++++++++++++++++
   /* Defined with respect to frame_id */
-  grasps[0].pre_grasp_approach.direction.header.frame_id = "wrist_3_link";
+  grasps[0].pre_grasp_approach.direction.header.frame_id = "gripper_base_link";
   /* Direction is set as positive x axis */
   grasps[0].pre_grasp_approach.direction.vector.x = 1.0;
   grasps[0].pre_grasp_approach.min_distance = 0.095;
@@ -115,7 +115,7 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   // Setting post-grasp retreat
   // ++++++++++++++++++++++++++
   /* Defined with respect to frame_id */
-  grasps[0].post_grasp_retreat.direction.header.frame_id = "wrist_3_link";
+  grasps[0].post_grasp_retreat.direction.header.frame_id = "gripper_base_link";
   /* Direction is set as positive z axis */
   grasps[0].post_grasp_retreat.direction.vector.z = 1.0;
   grasps[0].post_grasp_retreat.min_distance = 0.1;
@@ -289,7 +289,7 @@ int main(int argc, char** argv)
   addCollisionObjects(planning_scene_interface);
 
   // Wait a bit for ROS things to initialize
-  //ros::WallDuration(1.0).sleep();
+  ros::WallDuration(1.0).sleep();
 
   //pick(group);
 
