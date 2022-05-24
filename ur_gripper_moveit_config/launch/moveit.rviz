@@ -4,9 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /MotionPlanning1
-        - /MotionPlanning1/Scene Robot1
-        - /MotionPlanning1/Planning Request1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 140
   - Class: rviz/Help
@@ -74,10 +72,6 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          base:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           base_link:
             Alpha: 1
             Show Axes: false
@@ -143,10 +137,6 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          tool0:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           upper_arm_link:
             Alpha: 1
             Show Axes: false
@@ -174,8 +164,8 @@ Visualization Manager:
         Loop Animation: true
         Robot Alpha: 0.5
         Robot Color: 150; 50; 150
-        Show Robot Collision: false
-        Show Robot Visual: true
+        Show Robot Collision: true
+        Show Robot Visual: false
         Show Trail: false
         State Display Time: 0.05 s
         Trail Step Size: 1
@@ -195,7 +185,7 @@ Visualization Manager:
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
         Planning Group: arm
-        Query Goal State: true
+        Query Goal State: false
         Query Start State: false
         Show Workspace: false
         Start State Alpha: 1
@@ -217,10 +207,6 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          base:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           base_link:
             Alpha: 1
             Show Axes: false
@@ -286,10 +272,6 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          tool0:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           upper_arm_link:
             Alpha: 1
             Show Axes: false
@@ -324,8 +306,85 @@ Visualization Manager:
       Marker Topic: /rviz_visual_tools
       Name: MarkerArray
       Namespaces:
-        {}
+        Path: true
+        Sphere: true
+        Text: true
+        goal: true
+        pose1: true
+        start: true
       Queue Size: 100
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_link:
+          Value: false
+        ee_link:
+          Value: false
+        forearm_link:
+          Value: false
+        gripper_base_link:
+          Value: false
+        gripper_finger1_finger_link:
+          Value: false
+        gripper_finger1_finger_tip_link:
+          Value: false
+        gripper_finger1_inner_knuckle_link:
+          Value: false
+        gripper_finger1_knuckle_link:
+          Value: false
+        gripper_finger2_finger_link:
+          Value: false
+        gripper_finger2_finger_tip_link:
+          Value: false
+        gripper_finger2_inner_knuckle_link:
+          Value: false
+        gripper_finger2_knuckle_link:
+          Value: false
+        shoulder_link:
+          Value: false
+        upper_arm_link:
+          Value: false
+        world:
+          Value: true
+        wrist_1_link:
+          Value: false
+        wrist_2_link:
+          Value: false
+        wrist_3_link:
+          Value: true
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        world:
+          base_link:
+            shoulder_link:
+              upper_arm_link:
+                forearm_link:
+                  wrist_1_link:
+                    wrist_2_link:
+                      wrist_3_link:
+                        ee_link:
+                          gripper_base_link:
+                            gripper_finger1_inner_knuckle_link:
+                              gripper_finger1_finger_tip_link:
+                                {}
+                            gripper_finger1_knuckle_link:
+                              gripper_finger1_finger_link:
+                                {}
+                            gripper_finger2_inner_knuckle_link:
+                              gripper_finger2_finger_tip_link:
+                                {}
+                            gripper_finger2_knuckle_link:
+                              gripper_finger2_finger_link:
+                                {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
@@ -343,7 +402,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.184623956680298
+      Distance: 3.4792754650115967
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -359,9 +418,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.17479927837848663
+      Pitch: 0.5597991943359375
       Target Frame: world
-      Yaw: 1.1067854166030884
+      Yaw: 0.9667859077453613
     Saved: ~
 Window Geometry:
   Displays:
@@ -381,5 +440,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1386
-  X: 439
-  Y: 82
+  X: 367
+  Y: 49
