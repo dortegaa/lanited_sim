@@ -75,7 +75,7 @@ void closedGripper(trajectory_msgs::JointTrajectory& posture)
   /* Set them as closed. */
   posture.points.resize(1);
   posture.points[0].positions.resize(1);
-  posture.points[0].positions[0] = 0.50;
+  posture.points[0].positions[0] = 0.10;
   //posture.points[0].positions[1] = 0.00;
   posture.points[0].time_from_start = ros::Duration(2.5);
   // END_SUB_TUTORIAL
@@ -97,20 +97,21 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   // transform from `"panda_link8"` to the palm of the end effector.
   grasps[0].grasp_pose.header.frame_id = "base_link";
   grasps[0].grasp_pose.pose.orientation.x = -0.500;
-  grasps[0].grasp_pose.pose.orientation.y = 0.500;
-  grasps[0].grasp_pose.pose.orientation.z = -0.500;
-  grasps[0].grasp_pose.pose.orientation.w = 0.500;
-  grasps[0].grasp_pose.pose.position.x = 0.392;
-  grasps[0].grasp_pose.pose.position.y = 0.0;
-  grasps[0].grasp_pose.pose.position.z = 0.780;
+  grasps[0].grasp_pose.pose.orientation.y = 0.50;
+  grasps[0].grasp_pose.pose.orientation.z = 0.50;
+  grasps[0].grasp_pose.pose.orientation.w = 0.50;
+  grasps[0].grasp_pose.pose.position.x = 0.406;
+  grasps[0].grasp_pose.pose.position.y = -0.001;
+  grasps[0].grasp_pose.pose.position.z = 0.15;
+
   // Setting pre-grasp approach
   // ++++++++++++++++++++++++++
   /* Defined with respect to frame_id */
   grasps[0].pre_grasp_approach.direction.header.frame_id = "base_link";
   /* Direction is set as positive x axis */
   grasps[0].pre_grasp_approach.direction.vector.z = -1.0;
-  grasps[0].pre_grasp_approach.min_distance = 0.18;
-  grasps[0].pre_grasp_approach.desired_distance = 0.2;
+  grasps[0].pre_grasp_approach.min_distance = 0.1;
+  grasps[0].pre_grasp_approach.desired_distance = 0.15;
 
   // Setting post-grasp retreat
   // ++++++++++++++++++++++++++
@@ -118,8 +119,8 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   grasps[0].post_grasp_retreat.direction.header.frame_id = "base_link";
   /* Direction is set as positive z axis */
   grasps[0].post_grasp_retreat.direction.vector.z = 1.0;
-  grasps[0].post_grasp_retreat.min_distance = 0.18;
-  grasps[0].post_grasp_retreat.desired_distance = 0.25;
+  grasps[0].post_grasp_retreat.min_distance = 0.10;
+  grasps[0].post_grasp_retreat.desired_distance = 0.20;
 
   // Setting posture of eef before grasp
   // +++++++++++++++++++++++++++++++++++
@@ -312,7 +313,7 @@ int main(int argc, char** argv)
   group.setPlanningTime(10.0);
   group.setMaxVelocityScalingFactor(0.05);
   group.setMaxAccelerationScalingFactor(0.05);
-  group.setEndEffectorLink("wrist_3_link");
+  group.setEndEffectorLink("ee_link");
 
   addCollisionObjects(planning_scene_interface);
 
@@ -321,13 +322,16 @@ int main(int argc, char** argv)
 
   ready(group);
 
+  ros::WallDuration(2.0).sleep();
+
   pick(group);
 
-  //ros::WallDuration(1.0).sleep();
+  ros::WallDuration(1.0).sleep();
 
   //place(group);
 
-  ros::waitForShutdown();
+  ros::shutdown();
+  //ros::waitForShutdown();
   return 0;
 }
 
