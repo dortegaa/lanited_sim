@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: David Ortega
     author_email: dortega@cidesi.edu.mx
-    generated_timestamp: 1653350849
+    generated_timestamp: 1654199855
