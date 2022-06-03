@@ -311,9 +311,9 @@ int main(int argc, char** argv)
   ros::WallDuration(1.0).sleep();
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
   moveit::planning_interface::MoveGroupInterface group("arm");
-  group.setPlanningTime(15.0);
-  //group.setMaxVelocityScalingFactor(0.5);
-  //group.setMaxAccelerationScalingFactor(0.5);
+  group.setPlanningTime(20.0);
+  group.setMaxVelocityScalingFactor(0.5);
+  group.setMaxAccelerationScalingFactor(0.5);
   group.setEndEffectorLink("ee_link");
 
   addCollisionObjects(planning_scene_interface);
