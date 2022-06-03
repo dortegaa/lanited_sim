@@ -100,9 +100,9 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   grasps[0].grasp_pose.pose.orientation.y = 0.50;
   grasps[0].grasp_pose.pose.orientation.z = 0.50;
   grasps[0].grasp_pose.pose.orientation.w = 0.50;
-  grasps[0].grasp_pose.pose.position.x = 0.406;
-  grasps[0].grasp_pose.pose.position.y = -0.001;
-  grasps[0].grasp_pose.pose.position.z = 0.15;
+  grasps[0].grasp_pose.pose.position.x = 0.400;
+  grasps[0].grasp_pose.pose.position.y = -0.000;
+  grasps[0].grasp_pose.pose.position.z = 0.190;
 
   // Setting pre-grasp approach
   // ++++++++++++++++++++++++++
@@ -154,20 +154,21 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
 
   // Setting place location pose
   // +++++++++++++++++++++++++++
-  place_location[0].place_pose.header.frame_id = "wrist_3_link";
-  tf2::Quaternion orientation;
-  orientation.setRPY(0, 0, tau / 4);  // A quarter turn about the z-axis
-  place_location[0].place_pose.pose.orientation = tf2::toMsg(orientation);
+  place_location[0].place_pose.header.frame_id = "base_link";
+  place_location[0].place_pose.pose.orientation.x = -0.00;
+  place_location[0].place_pose.pose.orientation.y = 0.0;
+  place_location[0].place_pose.pose.orientation.z = 0.0;
+  place_location[0].place_pose.pose.orientation.w = 1.0;
 
   /* For place location, we set the value to the exact location of the center of the object. */
   place_location[0].place_pose.pose.position.x = 0;
-  place_location[0].place_pose.pose.position.y = 0.5;
-  place_location[0].place_pose.pose.position.z = 0.5;
+  place_location[0].place_pose.pose.position.y = 0.35;
+  place_location[0].place_pose.pose.position.z = 0.01;
 
   // Setting pre-place approach
   // ++++++++++++++++++++++++++
   /* Defined with respect to frame_id */
-  place_location[0].pre_place_approach.direction.header.frame_id = "wrist_3_link";
+  place_location[0].pre_place_approach.direction.header.frame_id = "base_link";
   /* Direction is set as negative z axis */
   place_location[0].pre_place_approach.direction.vector.z = -1.0;
   place_location[0].pre_place_approach.min_distance = 0.095;
@@ -176,9 +177,9 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
   // Setting post-grasp retreat
   // ++++++++++++++++++++++++++
   /* Defined with respect to frame_id */
-  place_location[0].post_place_retreat.direction.header.frame_id = "wrist_3_link";
+  place_location[0].post_place_retreat.direction.header.frame_id = "base_link";
   /* Direction is set as negative y axis */
-  place_location[0].post_place_retreat.direction.vector.y = -1.0;
+  place_location[0].post_place_retreat.direction.vector.z = 1.0;
   place_location[0].post_place_retreat.min_distance = 0.1;
   place_location[0].post_place_retreat.desired_distance = 0.25;
 
@@ -188,7 +189,7 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
   openGripper(place_location[0].post_place_posture);
 
   // Set support surface as table2.
-  group.setSupportSurfaceName("table2");
+  group.setSupportSurfaceName("mesa_general_sola.dae_0");
   // Call place to place the object using the place locations given.
   group.place("object", place_location);
   // END_SUB_TUTORIAL
@@ -310,9 +311,9 @@ int main(int argc, char** argv)
   ros::WallDuration(1.0).sleep();
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
   moveit::planning_interface::MoveGroupInterface group("arm");
-  group.setPlanningTime(10.0);
-  group.setMaxVelocityScalingFactor(0.05);
-  group.setMaxAccelerationScalingFactor(0.05);
+  group.setPlanningTime(15.0);
+  //group.setMaxVelocityScalingFactor(0.5);
+  //group.setMaxAccelerationScalingFactor(0.5);
   group.setEndEffectorLink("ee_link");
 
   addCollisionObjects(planning_scene_interface);
@@ -328,7 +329,9 @@ int main(int argc, char** argv)
 
   ros::WallDuration(1.0).sleep();
 
-  //place(group);
+  place(group);
+
+  ros::WallDuration(1.0).sleep();
 
   ros::shutdown();
   //ros::waitForShutdown();
