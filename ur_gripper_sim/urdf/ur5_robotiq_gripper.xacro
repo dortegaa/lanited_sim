@@ -21,6 +21,16 @@
     <xacro:robotiq_85_gripper prefix="" parent="ee_link" >
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:robotiq_85_gripper>
+
+      <xacro:include filename="$(find kinect_v2)/urdf/kinect_v2.urdf.xacro" />
+     <!--link name="world"/-->
+    <xacro:kinect_v2  parent="world">
+        <origin xyz="0.4 0 1.2"
+                rpy="0 1.57 0" />
+    </xacro:kinect_v2>
+
+  
+    
   <link name="world" />
 
   <joint name="world_joint" type="fixed">
