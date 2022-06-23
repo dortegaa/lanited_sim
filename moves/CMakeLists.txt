@@ -49,3 +49,6 @@ include_directories(
 
  add_executable(read_and_move src/read_and_move.cpp)
  target_link_libraries(read_and_move ${catkin_LIBRARIES} )
+
+ add_executable(moveit_api src/moveit_api.cpp)
+ target_link_libraries(moveit_api ${catkin_LIBRARIES} )
