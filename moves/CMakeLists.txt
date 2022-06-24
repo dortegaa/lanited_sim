@@ -52,3 +52,12 @@ include_directories(
 
  add_executable(moveit_api src/moveit_api.cpp)
  target_link_libraries(moveit_api ${catkin_LIBRARIES} )
+
+ add_executable(r1_moveit_api src/r1_moveit_api.cpp)
+ target_link_libraries(r1_moveit_api ${catkin_LIBRARIES} )
+
+ add_executable(r2_moveit_api src/r2_moveit_api.cpp)
+ target_link_libraries(r2_moveit_api ${catkin_LIBRARIES} )
+
+ add_executable(robot_model src/robot_model.cpp)
+ target_link_libraries(robot_model ${catkin_LIBRARIES} )

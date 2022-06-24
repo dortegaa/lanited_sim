@@ -15,14 +15,14 @@
 
 int main(int argc, char** argv)
 {
-  const std::string node_name = "moveit_api";
+  const std::string node_name = "r1_moveit_api";
   ros::init(argc, argv, node_name);
   ros::AsyncSpinner spinner(1);
   spinner.start();
   ros::NodeHandle node_handle("~");
 
   const std::string PLANNING_GROUP = "arm";
-  robot_model_loader::RobotModelLoader robot_model_loader("robot_description");
+  robot_model_loader::RobotModelLoader robot_model_loader("robot1/robot_description");
   const moveit::core::RobotModelPtr& robot_model = robot_model_loader.getModel();
  
   moveit::core::RobotStatePtr robot_state(new moveit::core::RobotState(robot_model));

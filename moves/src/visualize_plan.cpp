@@ -33,7 +33,7 @@ int main(int argc, char** argv)
   //
   
   namespace rvt = rviz_visual_tools;
-  moveit_visual_tools::MoveItVisualTools visual_tools("panda_link0");
+  moveit_visual_tools::MoveItVisualTools visual_tools("base_link");
   visual_tools.deleteAllMarkers();
 
   visual_tools.loadRemoteControl();
