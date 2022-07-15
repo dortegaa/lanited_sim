@@ -2,7 +2,12 @@
 
 
 <robot name="robotiq_85_gripper" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find robotiq_85_description)/urdf/robotiq_85_gripper.transmission.xacro" />
+    <xacro:include filename="$(find robotiq_85_description)/urdf/robotiq_85_gripper.transmission.xacro" /> 
+    
+    <xacro:include filename="$(find robotiq_85_description)/urdf/gazebo_grasp.xacro" />
+
+    <xacro:include filename="$(find robotiq_85_description)/urdf/gazebo_mimic.xacro" />
+
     
     <xacro:macro name="robotiq_85_gripper" params="prefix parent *origin">
 
@@ -333,10 +338,11 @@
 
 
         <xacro:robotiq_85_gripper_transmission prefix="${prefix}" />
+        <xacro:gazebo_grasp_plugin prefix="${prefix}" />
+        <xacro:gazebo_mimic_plugin prefix="${prefix}" />
 
     </xacro:macro>
 
-      <xacro:include filename="$(find robotiq_85_description)/urdf/gazebo_grasp.xacro" />
-    <xacro:include filename="$(find robotiq_85_description)/urdf/gazebo_mimic.xacro" />
+     
 
 </robot>
