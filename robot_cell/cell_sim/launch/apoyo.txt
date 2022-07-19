@@ -188,3 +188,5 @@
       <origin xyz="-1.1 -0.30 0.90" rpy="0.0 0.0 -1.57" />
     </joint>
 
+ <!-- load other controllers -->
+    <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load r1joint_group_position_controller r2joint_group_position_controller" />
