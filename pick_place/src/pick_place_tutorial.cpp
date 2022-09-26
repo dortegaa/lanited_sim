@@ -52,7 +52,7 @@ void openGripper(trajectory_msgs::JointTrajectory& posture)
   // BEGIN_SUB_TUTORIAL open_gripper
   /* Add both finger joints of panda robot. */
   posture.joint_names.resize(1);
-  posture.joint_names[0] = "gripper_finger1_joint";
+  posture.joint_names[0] = "robotiq_85_left_knuckle_joint";
   //posture.joint_names[1] = "panda_finger_joint2";
 
   /* Set them as open, wide enough for the object to fit. */
@@ -69,7 +69,7 @@ void closedGripper(trajectory_msgs::JointTrajectory& posture)
   // BEGIN_SUB_TUTORIAL closed_gripper
   /* Add both finger joints of panda robot. */
   posture.joint_names.resize(1);
-  posture.joint_names[0] = "gripper_finger1_joint";
+  posture.joint_names[0] = "robotiq_85_left_knuckle_joint";
   //posture.joint_names[1] = "panda_finger_joint2";
 
   /* Set them as closed. */
@@ -135,7 +135,7 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
 
   // BEGIN_SUB_TUTORIAL pick3
   // Set support surface as table1.
-  move_group.setSupportSurfaceName("mesa_general_sola.dae_0");
+  //move_group.setSupportSurfaceName("celda_.dae_0");
   // Call pick to pick up the object using the grasps given
   move_group.pick("object", grasps);
   // END_SUB_TUTORIAL
@@ -189,7 +189,7 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
   openGripper(place_location[0].post_place_posture);
 
   // Set support surface as table2.
-  group.setSupportSurfaceName("mesa_general_sola.dae_0");
+  //group.setSupportSurfaceName("mesa_general_sola.dae_0");
   // Call place to place the object using the place locations given.
   group.place("object", place_location);
   // END_SUB_TUTORIAL
@@ -281,7 +281,7 @@ void ready(moveit::planning_interface::MoveGroupInterface& group)
   moveit::core::RobotStatePtr current_state = group.getCurrentState();
 
   const moveit::core::JointModelGroup* joint_model_group =
-      group.getCurrentState()->getJointModelGroup("arm");
+      group.getCurrentState()->getJointModelGroup("ur5_arm");
 
   std::vector<double> joint_group_positions;
   current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);
@@ -310,7 +310,7 @@ int main(int argc, char** argv)
 
   ros::WallDuration(1.0).sleep();
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
-  moveit::planning_interface::MoveGroupInterface group("arm");
+  moveit::planning_interface::MoveGroupInterface group("ur5_arm");
   group.setPlanningTime(20.0);
   group.setMaxVelocityScalingFactor(0.5);
   group.setMaxAccelerationScalingFactor(0.5);
@@ -319,9 +319,9 @@ int main(int argc, char** argv)
   addCollisionObjects(planning_scene_interface);
 
   // Wait a bit for ROS things to initialize
-  ros::WallDuration(1.0).sleep();
+  //ros::WallDuration(1.0).sleep();
 
-  ready(group);
+  //ready(group);
 
   ros::WallDuration(2.0).sleep();
 
