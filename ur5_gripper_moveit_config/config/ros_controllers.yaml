@@ -103,3 +103,6 @@ gripper_controller:
       d: 0
       i: 0
       i_clamp: 1
+initial:  # Define initial robot poses.
+  - group: ur5_arm
+    pose: ready

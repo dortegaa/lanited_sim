@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.7'>
   <model name='mesa'>
-    <link name='link_1'>
+    <link name='link_0'>
       <inertial>
         <mass>0</mass>
         <inertia>
@@ -15,7 +15,7 @@
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
       <pose>0 0 0 0 -0 0</pose>
-      <gravity>1</gravity>
+      <gravity>0</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <enable_wind>0</enable_wind>
@@ -31,12 +31,12 @@
           <lighting>1</lighting>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/White</name>
+            <name>Gazebo/Grey</name>
           </script>
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.3 0.3 0.3 1</ambient>
+          <ambient>0.6 0.6 0.6 1</ambient>
           <diffuse>0.7 0.7 0.7 1</diffuse>
           <specular>0.01 0.01 0.01 1</specular>
           <emissive>0 0 0 1</emissive>
