@@ -34,7 +34,7 @@ hardware_interface:
     sim_control_mode: 1  # 0: position, 1: velocity
 
 ur5_B_controller:
-  type: position_controllers/JointTrajectoryController
+  type: effort_controllers/JointTrajectoryController
   joints:
     - ur5_B_shoulder_pan_joint
     - ur5_B_shoulder_lift_joint
@@ -44,35 +44,35 @@ ur5_B_controller:
     - ur5_B_wrist_3_joint
   gains:
     ur5_B_shoulder_pan_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 1000
+      d: 50
+      i: 10
+      i_clamp: 100
     ur5_B_shoulder_lift_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 5000
+      d: 30
+      i: 100
+      i_clamp: 400
     ur5_B_elbow_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 5000
+      d: 50
+      i: 10
+      i_clamp: 100
     ur5_B_wrist_1_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 200
+      d: 20
+      i: 10
+      i_clamp: 100
     ur5_B_wrist_2_joint:
       p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      d: 10
+      i: 0.1
+      i_clamp: 100
     ur5_B_wrist_3_joint:
-      p: 100
+      p: 10
       d: 1
-      i: 1
-      i_clamp: 1
+      i: 0.1
+      i_clamp: 100
     constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
@@ -87,7 +87,7 @@ ur5_B_controller:
     action_monitor_rate: 10
     
 ur3_A_controller:
-  type: position_controllers/JointTrajectoryController
+  type: effort_controllers/JointTrajectoryController
   joints:
     - ur3_A_shoulder_pan_joint
     - ur3_A_shoulder_lift_joint
@@ -97,35 +97,35 @@ ur3_A_controller:
     - ur3_A_wrist_3_joint
   gains:
     ur3_A_shoulder_pan_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 1000
+      d: 50
+      i: 10
+      i_clamp: 100
     ur3_A_shoulder_lift_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 5000
+      d: 30
+      i: 100
+      i_clamp: 400
     ur3_A_elbow_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 5000
+      d: 50
+      i: 10
+      i_clamp: 100
     ur3_A_wrist_1_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 200
+      d: 20
+      i: 10
+      i_clamp: 100
     ur3_A_wrist_2_joint:
       p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      d: 10
+      i: 0.1
+      i_clamp: 100
     ur3_A_wrist_3_joint:
-      p: 100
+      p: 10
       d: 1
-      i: 1
-      i_clamp: 1
+      i: 0.1
+      i_clamp: 100
     constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
@@ -140,7 +140,7 @@ ur3_A_controller:
     action_monitor_rate: 10
     
 ur3_C_controller:
-  type: position_controllers/JointTrajectoryController
+  type: effort_controllers/JointTrajectoryController
   joints:
     - ur3_C_shoulder_pan_joint
     - ur3_C_shoulder_lift_joint
@@ -150,35 +150,35 @@ ur3_C_controller:
     - ur3_C_wrist_3_joint
   gains:
     ur3_C_shoulder_pan_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 1000
+      d: 50
+      i: 10
+      i_clamp: 100
     ur3_C_shoulder_lift_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 5000
+      d: 30
+      i: 100
+      i_clamp: 400
     ur3_C_elbow_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 5000
+      d: 50
+      i: 10
+      i_clamp: 100
     ur3_C_wrist_1_joint:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 200
+      d: 20
+      i: 10
+      i_clamp: 100
     ur3_C_wrist_2_joint:
       p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      d: 10
+      i: 0.1
+      i_clamp: 100
     ur3_C_wrist_3_joint:
-      p: 100
+      p: 10
       d: 1
-      i: 1
-      i_clamp: 1
+      i: 0.1
+      i_clamp: 100
     constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
@@ -193,15 +193,15 @@ ur3_C_controller:
     action_monitor_rate: 10
     
 axis_ext_controller:
-  type: position_controllers/JointTrajectoryController
+  type: effort_controllers/JointTrajectoryController
   joints:
     - eje_extern_joint
   gains:
     eje_extern_joint:
       p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      d: 10
+      i: 0.1
+      i_clamp: 100
     constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
@@ -214,3 +214,6 @@ axis_ext_controller:
     stop_trajectory_duration: 0.5
     state_publish_rate:  25
     action_monitor_rate: 10
+initial:  # Define initial robot poses.
+  - group: ur5_B
+    pose: home
