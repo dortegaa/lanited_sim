@@ -3,11 +3,12 @@
   <arg name="paused" default="false"/>
   <arg name="gazebo_gui" default="true"/>
   <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
-       default=" -J eje_extern_joint 0 -J ur3_A_elbow_joint 0 -J ur3_A_shoulder_lift_joint 0 -J ur3_A_shoulder_pan_joint 0 -J ur3_A_wrist_1_joint 0 -J ur3_A_wrist_2_joint 0 -J ur3_A_wrist_3_joint 0 -J ur3_C_elbow_joint 0 -J ur3_C_shoulder_lift_joint 0 -J ur3_C_shoulder_pan_joint 0 -J ur3_C_wrist_1_joint 0 -J ur3_C_wrist_2_joint 0 -J ur3_C_wrist_3_joint 0 -J ur5_B_elbow_joint 0 -J ur5_B_shoulder_lift_joint 0 -J ur5_B_shoulder_pan_joint 0 -J ur5_B_wrist_1_joint 0 -J ur5_B_wrist_2_joint 0 -J ur5_B_wrist_3_joint 0"/>
+       default= "-J eje_extern_joint 0 -J ur3_A_elbow_joint 1.5447 -J ur3_A_shoulder_lift_joint -1.5447 -J ur3_A_shoulder_pan_joint 0 -J ur3_A_wrist_1_joint -1.5794 -J ur3_A_wrist_2_joint -1.5794 -J ur3_A_wrist_3_joint 0 -J ur3_C_elbow_joint 1.5447 -J ur3_C_shoulder_lift_joint -1.5447 -J ur3_C_shoulder_pan_joint 0 -J ur3_C_wrist_1_joint -1.5794 -J ur3_C_wrist_2_joint -1.5794 -J ur3_C_wrist_3_joint 0 -J ur5_B_elbow_joint 1.5447 -J ur5_B_shoulder_lift_joint -1.5447 -J ur5_B_shoulder_pan_joint 0 -J ur5_B_wrist_1_joint -1.5794 -J ur5_B_wrist_2_joint -1.5794 -J ur5_B_wrist_3_joint 0"/>
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" default="worlds/empty.world"/>
+    <!-- <arg name="world_name" default="worlds/empty.world"/> -->
+    <arg name="world_name" value="$(find celda)/worlds/lanited_v6.world"/>
     <arg name="paused" value="true"/>
     <arg name="gui" value="$(arg gazebo_gui)"/>
   </include>

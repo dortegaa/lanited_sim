@@ -76,6 +76,30 @@
     <group_state name="home" group="axis_ext">
         <joint name="eje_extern_joint" value="0"/>
     </group_state>
+    <group_state name="ready" group="ur5_B">
+        <joint name="ur5_B_elbow_joint" value="1.5447"/>
+        <joint name="ur5_B_shoulder_lift_joint" value="-1.5447"/>
+        <joint name="ur5_B_shoulder_pan_joint" value="0"/>
+        <joint name="ur5_B_wrist_1_joint" value="-1.5794"/>
+        <joint name="ur5_B_wrist_2_joint" value="-1.5794"/>
+        <joint name="ur5_B_wrist_3_joint" value="0"/>
+    </group_state>
+        <group_state name="ready" group="ur3_A">
+        <joint name="ur3_A_elbow_joint" value="1.5447"/>
+        <joint name="ur3_A_shoulder_lift_joint" value="-1.5447"/>
+        <joint name="ur3_A_shoulder_pan_joint" value="0"/>
+        <joint name="ur3_A_wrist_1_joint" value="-1.5794"/>
+        <joint name="ur3_A_wrist_2_joint" value="-1.5794"/>
+        <joint name="ur3_A_wrist_3_joint" value="0"/>
+    </group_state>
+        <group_state name="ready" group="ur3_C">
+        <joint name="ur3_C_elbow_joint" value="1.5447"/>
+        <joint name="ur3_C_shoulder_lift_joint" value="-1.5447"/>
+        <joint name="ur3_C_shoulder_pan_joint" value="0"/>
+        <joint name="ur3_C_wrist_1_joint" value="-1.5794"/>
+        <joint name="ur3_C_wrist_2_joint" value="-1.5794"/>
+        <joint name="ur3_C_wrist_3_joint" value="0"/>
+    </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_fixed" type="fixed" parent_frame="world_ws" child_link="world"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->

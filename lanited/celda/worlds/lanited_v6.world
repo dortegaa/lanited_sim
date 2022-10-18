@@ -109,7 +109,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/mesa.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/mesa.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -136,7 +136,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/mesa.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/mesa.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -300,7 +300,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/base_pcb.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/base_pcb.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -327,7 +327,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/base_pcb.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/base_pcb.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -405,7 +405,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/lpkf.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/lpkf.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -432,7 +432,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/lpkf.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/lpkf.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -510,7 +510,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/limpieza.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/limpieza.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -537,7 +537,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/limpieza.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/limpieza.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -615,7 +615,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/stencil.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/stencil.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -642,7 +642,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/stencil.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/stencil.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -720,7 +720,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/inspeccion.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/inspeccion.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -747,7 +747,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/arandsi1/lanited_ws/src/ur5_gripper_moveit_config/worlds/meshes/inspeccion.STL</uri>
+              <uri>/home/arandsi1/lanited_ws/src/lanited/celda/worlds/meshes/inspeccion.STL</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>

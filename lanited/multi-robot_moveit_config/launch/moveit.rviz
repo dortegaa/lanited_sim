@@ -3,7 +3,8 @@ Panels:
     Help Height: 84
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /MotionPlanning1
       Splitter Ratio: 0.5
     Tree Height: 295
   - Class: rviz/Help
@@ -61,7 +62,7 @@ Visualization Manager:
           Z: 2
       Name: MotionPlanning
       Planned Path:
-        Color Enabled: false
+        Color Enabled: true
         Interrupt Display: false
         Links:
           All Links Enabled: true
@@ -247,10 +248,10 @@ Visualization Manager:
       Planning Request:
         Colliding Link Color: 255; 0; 0
         Goal State Alpha: 1
-        Goal State Color: 250; 128; 0
+        Goal State Color: 32; 74; 135
         Interactive Marker Size: 0.10000000149011612
         Joint Violation Color: 255; 0; 255
-        Planning Group: axis_ext
+        Planning Group: ur5_B
         Query Goal State: true
         Query Start State: false
         Show Workspace: false
@@ -468,9 +469,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.2249993234872818
+      Pitch: 0.6699992418289185
       Target Frame: world
-      Yaw: 6.139944553375244
+      Yaw: 0.9117590188980103
     Saved: ~
 Window Geometry:
   Displays:
@@ -488,5 +489,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1848
-  X: 72
+  X: 1992
   Y: 27

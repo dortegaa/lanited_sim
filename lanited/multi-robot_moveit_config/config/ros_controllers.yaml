@@ -215,5 +215,11 @@ axis_ext_controller:
     state_publish_rate:  25
     action_monitor_rate: 10
 initial:  # Define initial robot poses.
+  - group: ur3_A
+    pose: ready
   - group: ur5_B
+    pose: ready
+  - group: ur3_C
+    pose: ready
+  - group: axis_ext
     pose: home
