@@ -59,18 +59,18 @@ ur5_B_controller:
       i: 10
       i_clamp: 100
     ur5_B_wrist_1_joint:
-      p: 200
-      d: 20
-      i: 10
+      p: 400
+      d: 10
+      i: 1.0
       i_clamp: 100
     ur5_B_wrist_2_joint:
-      p: 100
-      d: 10
-      i: 0.1
+      p: 150
+      d: 5
+      i: 0.01
       i_clamp: 100
     ur5_B_wrist_3_joint:
-      p: 10
-      d: 1
+      p: 30
+      d: 0.01
       i: 0.1
       i_clamp: 100
     constraints:
@@ -112,20 +112,19 @@ ur3_A_controller:
       i: 10
       i_clamp: 100
     ur3_A_wrist_1_joint:
-      p: 200
-      d: 20
-      i: 10
+      p: 300
+      d: 0.1
+      i: 0.09
       i_clamp: 100
     ur3_A_wrist_2_joint:
       p: 100
-      d: 10
-      i: 0.1
+      d: 0.1
+      i: 0.01
       i_clamp: 100
     ur3_A_wrist_3_joint:
-      p: 10
-      d: 1
-      i: 0.1
-      i_clamp: 100
+      p: 300
+      d: 0.1
+      i: 0.01
     constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
@@ -165,19 +164,19 @@ ur3_C_controller:
       i: 10
       i_clamp: 100
     ur3_C_wrist_1_joint:
-      p: 200
-      d: 20
-      i: 10
+      p: 300
+      d: 0.1
+      i: 0.09
       i_clamp: 100
     ur3_C_wrist_2_joint:
       p: 100
-      d: 10
-      i: 0.1
+      d: 0.1
+      i: 0.01
       i_clamp: 100
     ur3_C_wrist_3_joint:
-      p: 10
-      d: 1
-      i: 0.1
+      p: 300
+      d: 0.1
+      i: 0.01
       i_clamp: 100
     constraints:
       goal_time: 0.6
@@ -198,9 +197,9 @@ axis_ext_controller:
     - eje_extern_joint
   gains:
     eje_extern_joint:
-      p: 100
-      d: 10
-      i: 0.1
+      p: 250
+      d: 150
+      i: 1.0
       i_clamp: 100
     constraints:
       goal_time: 0.6

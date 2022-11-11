@@ -3,7 +3,7 @@
   <arg name="gui" default="true" />
   
   <param name="robot_description"
-         command="$(find xacro)/xacro --inorder $(find multi-robot_description)/urdf/multi-robot.urdf.xacro" />
+         command="$(find xacro)/xacro --inorder $(find multi-robot_description)/urdf/multi-robot_grippers.urdf.xacro" />
   
   <param name="use_gui" value="$(arg gui)"/>
   

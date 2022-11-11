@@ -39,7 +39,7 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Acceleration_Scaling_Factor: 1
+    - Acceleration_Scaling_Factor: 0.5
       Class: moveit_rviz_plugin/MotionPlanning
       Enabled: true
       Move Group Namespace: ""
@@ -48,7 +48,7 @@ Visualization Manager:
       MoveIt_Allow_Replanning: false
       MoveIt_Allow_Sensor_Positioning: false
       MoveIt_Planning_Attempts: 10
-      MoveIt_Planning_Time: 10
+      MoveIt_Planning_Time: 15
       MoveIt_Use_Cartesian_Path: false
       MoveIt_Use_Constraint_Aware_IK: false
       MoveIt_Workspace:
@@ -251,7 +251,7 @@ Visualization Manager:
         Goal State Color: 32; 74; 135
         Interactive Marker Size: 0.10000000149011612
         Joint Violation Color: 255; 0; 255
-        Planning Group: ur5_B
+        Planning Group: axis_ext
         Query Goal State: true
         Query Start State: false
         Show Workspace: false
@@ -436,7 +436,7 @@ Visualization Manager:
         Show Robot Collision: false
         Show Robot Visual: true
       Value: true
-      Velocity_Scaling_Factor: 1
+      Velocity_Scaling_Factor: 0.5
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -453,7 +453,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.435770034790039
+      Distance: 3.461763620376587
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -461,17 +461,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.75
       Focal Point:
-        X: -0.10000000149011612
-        Y: 0.25
-        Z: 0.30000001192092896
+        X: 0.5090310573577881
+        Y: 0.04408537223935127
+        Z: 1.1447749137878418
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6699992418289185
+      Pitch: 0.6249988675117493
       Target Frame: world
-      Yaw: 0.9117590188980103
+      Yaw: 2.4917588233947754
     Saved: ~
 Window Geometry:
   Displays:

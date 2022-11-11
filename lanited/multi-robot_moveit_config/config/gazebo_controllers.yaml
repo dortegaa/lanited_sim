@@ -81,3 +81,11 @@ gazebo_ros_control:
       p: 100
       d: 0.01
       i: 10
+    ur5_B_gripper_left_finger_joint:
+      p: 100
+      d: 0.01
+      i: 10
+    ur3_C_gripper_left_finger_joint:
+      p: 100
+      d: 0.01
+      i: 10

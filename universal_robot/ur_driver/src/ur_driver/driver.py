@@ -8,7 +8,7 @@ import socket, select
 import struct
 import traceback, code
 import optparse
-import SocketServer
+import socketserver as SocketServer
 
 import rospy
 import actionlib
